@@ -16,9 +16,13 @@ import minimal
 import soundfile as sf
 import logging
 
+# importing NAT_traversal for 4 activity
+import NAT_traversal
+
+
 minimal.parser.add_argument("-b", "--buffering_time", type=int, default=150, help="Miliseconds to buffer")
 
-class Buffering(minimal.Minimal):
+class Buffering(NAT_traversal.NAT_traversal):
 
     CHUNK_NUMBERS = 1 << 15 # Enought for most buffering times.
 
